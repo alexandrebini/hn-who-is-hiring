@@ -1,4 +1,0 @@
-%form.form-inline
-  .form-group
-    %input.form-control{ type: 'text', placeholder: 'Enter the twitter username' }
-    %button.btn.btn-primary{ type: 'submit' } Submit

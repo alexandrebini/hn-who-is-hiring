@@ -19,11 +19,11 @@ module Scrapper
       def create(post)
         link = post.css('td.title a')
         url = "https://news.ycombinator.com/#{ link.attr('href') }"
-        days_ago = post.next.text.scan(DATE_PATTERN).join.scan(/\d+/).first.to_i
 
         post = Post.where(url: url).first_or_initialize
         post.title = link.text
-        post.published_at = days_ago.days.ago
+        post.published_at = DateTime.parse_distance_of_time_in_words(
+          post.next.text)
         post.save
       end
 

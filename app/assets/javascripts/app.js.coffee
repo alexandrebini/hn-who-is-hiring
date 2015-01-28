@@ -1,12 +1,12 @@
-@Tweet48 = do (Backbone, Marionette) ->
+@WhoIsHiring = do (Backbone, Marionette) ->
   App = new Marionette.Application
 
   App.addRegions
-    timelineRegion: '.timeline-region'
-    followersMatcherRegion: '.followers-matcher-region'
+    postsRegion: '.posts-region'
+    jobsRegion: '.jobs-region'
 
   App.addInitializer ->
-    App.module('UsersApp').start()
+    App.module('PostsApp').start()
 
   App.on 'start', ->
     @startHistory()

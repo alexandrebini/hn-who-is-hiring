@@ -1,4 +1,4 @@
-@Tweet48.module 'Modules', (Modules, App, Backbone, Marionette, $, _) ->
+@WhoIsHiring.module 'Modules', (Modules, App, Backbone, Marionette, $, _) ->
 
   class Modules.Routes
     @getInstance: ->
@@ -7,11 +7,8 @@
     rootPath: ->
       @urlFor '/'
 
-    timelinePath: (screnName) ->
-      @urlFor "/timeline/#{ screnName }/"
-
-    followersMatcherPath: (screenNames) ->
-      @urlFor "/followers-matcher/#{ screenNames.join('/') }/"
+    postPath: (id) ->
+      @urlFor "/posts/#{ id }/"
 
     urlFor: (route) ->
       Modules.UrlHelper.getInstance().urlFor route

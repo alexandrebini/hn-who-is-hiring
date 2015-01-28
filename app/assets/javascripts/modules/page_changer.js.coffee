@@ -1,4 +1,4 @@
-@Tweet48.module 'Modules', (Modules, App, Backbone, Marionette, $, _) ->
+@WhoIsHiring.module 'Modules', (Modules, App, Backbone, Marionette, $, _) ->
 
   class Modules.PageChanger
     @getInstance: ->

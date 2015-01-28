@@ -1,4 +1,4 @@
-@Tweet48.module 'Controllers', (Controllers, App, Backbone, Marionette, $, _) ->
+@WhoIsHiring.module 'Controllers', (Controllers, App, Backbone, Marionette, $, _) ->
 
   class Controllers.Base extends Marionette.Controller
 

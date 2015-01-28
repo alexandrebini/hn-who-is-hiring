@@ -1,6 +1,14 @@
 //= require jquery
+
+# Foundation
+//= require jquery.cookie
+//= require fastclick
+//= require foundation.min
+//= require modernizr
+//= require placeholder
+
+# Marionette
 //= require underscore
-//= require bootstrap
 //= require backbone
 //= require backbone.babysitter
 //= require backbone.wreqr
@@ -16,4 +24,4 @@
 //= require_tree ./apps
 
 $(document).ready ->
-  Tweet48.start()
+  WhoIsHiring.start()

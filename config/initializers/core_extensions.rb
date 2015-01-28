@@ -1,0 +1,1 @@
+DateTime.extend CoreExtensions::DateTime::DistanceOfTimeInWords

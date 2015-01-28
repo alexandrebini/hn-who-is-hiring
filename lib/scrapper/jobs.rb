@@ -16,8 +16,13 @@ module Scrapper
       #   <p></p>
       def all(post)
         document = Nokogiri::HTML open(post.url)
-        document.css('td > img[width="0"]').map do |img|
-          img.parent.parent
+        document.css('td > img[width="0"][height="1"]').map do |img|
+          comment = img.parent.parent
+
+          if comment.css('.comhead > a:last') &&
+            comment.css('span.comment').text != '[deleted]'
+            comment
+          end
         end.compact.uniq
       end
 
@@ -29,9 +34,10 @@ module Scrapper
         job.post = post
         job.description = comment.css('p').to_s
         job.user = comment.css('.comhead > a:first').text
+        job.published_at = DateTime.parse_distance_of_time_in_words(
+          comment.css('.comhead').text)
         job.save
       end
-
     end
   end
 end
