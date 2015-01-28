@@ -6,7 +6,7 @@ module Scrapper
       def run!
         Post.all.each do |post|
           self.all(post).each do |comment|
-            create(post: post, comment: comment)
+            create(post, comment)
           end
         end
       end
@@ -26,7 +26,7 @@ module Scrapper
         end.compact.uniq
       end
 
-      def create(post:, comment:)
+      def create(post, comment)
         href = comment.css('.comhead > a:last').attr('href')
         url = "https://news.ycombinator.com/#{ href }"
 
