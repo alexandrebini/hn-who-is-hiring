@@ -1,10 +1,10 @@
 require 'open-uri'
 
-module Scrapper
+module Scraper
   module Jobs
     class << self
-      def run!
-        Post.all.each do |post|
+      def run!(posts = Post.all)
+        posts.each do |post|
           self.all(post).each do |comment|
             create(post, comment)
           end

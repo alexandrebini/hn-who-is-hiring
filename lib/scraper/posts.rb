@@ -1,6 +1,6 @@
 require 'open-uri'
 
-module Scrapper
+module Scraper
   module Posts
     URL = 'https://news.ycombinator.com/submitted?id=whoishiring'
     PATTERN = Regexp.new('Ask HN: Who is hiring?')

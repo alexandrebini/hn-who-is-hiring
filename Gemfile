@@ -11,6 +11,7 @@ gem 'sass-rails', '5.0.1'
 gem 'uglifier', '2.6.1'
 gem 'unicorn', '4.8.3'
 gem 'nokogiri', '1.6.6.2'
+gem 'sucker_punch', '1.3.2'
 
 group :production do
   gem 'rails_12factor', '0.0.3'
