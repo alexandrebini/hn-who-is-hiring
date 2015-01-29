@@ -20,11 +20,11 @@ module Scraper
         link = post.css('td.title a')
         url = "https://news.ycombinator.com/#{ link.attr('href') }"
 
-        post = Post.where(url: url).first_or_initialize
-        post.title = link.text
-        post.published_at = DateTime.parse_distance_of_time_in_words(
+        record = Post.where(url: url).first_or_initialize
+        record.title = link.text
+        record.published_at = DateTime.parse_distance_of_time_in_words(
           post.next.text)
-        post.save
+        record.save
       end
 
       def document

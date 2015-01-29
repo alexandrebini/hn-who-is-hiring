@@ -30,13 +30,13 @@ module Scraper
         href = comment.css('.comhead > a:last').attr('href')
         url = "https://news.ycombinator.com/#{ href }"
 
-        job = Job.where(url: url).first_or_initialize
-        job.post = post
-        job.description = comment.css('p').to_s
-        job.user = comment.css('.comhead > a:first').text
-        job.published_at = DateTime.parse_distance_of_time_in_words(
+        record = Job.where(url: url).first_or_initialize
+        record.post = post
+        record.description = comment.css('p').to_s
+        record.user = comment.css('.comhead > a:first').text
+        record.published_at = DateTime.parse_distance_of_time_in_words(
           comment.css('.comhead').text)
-        job.save
+        record.save
       end
     end
   end
