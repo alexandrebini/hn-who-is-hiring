@@ -8,15 +8,23 @@
       @listenTo @layout, 'show', =>
         App.execute 'when:fetched', @jobs, =>
           @jobsRegion()
+          # @paginationRegion() TODO
 
       App.jobsRegion.show @layout
 
     jobsRegion: ->
-      postsView = @getJobsView()
-      @layout.jobsRegion.show postsView
+      paginationView = @getJobsView()
+      @layout.jobsRegion.show paginationView
+
+    paginationRegion: ->
+      paginationView = @getPaginationView()
+      @layout.paginationRegion.show paginationView
 
     getLayoutView: ->
       new List.Layout()
 
     getJobsView: ->
       new List.JobsView(collection: @jobs)
+
+    getPaginationView: ->
+      new List.PaginationView(model: @jobs)

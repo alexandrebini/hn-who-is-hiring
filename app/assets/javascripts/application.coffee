@@ -13,6 +13,7 @@
 //= require backbone.babysitter
 //= require backbone.wreqr
 //= require backbone.marionette
+//= require backbone.paginator
 
 # Other
 //= require hamlcoffee

@@ -4,6 +4,7 @@
     template: 'jobs/list/templates/layout'
     regions:
       jobsRegion: '.jobs-region'
+      paginationRegion: '.pagination-region'
 
   class List.JobView extends Marionette.ItemView
     template: 'jobs/list/templates/job'
@@ -11,6 +12,11 @@
     templateHelpers:
       publishedAtFormatted: ->
         moment(@published_at).format('MM/DD/YYYY')
+
+  class List.PaginationView extends Marionette.ItemView
+    template: 'jobs/list/templates/pagination'
+    serializeData: ->
+      @model.state
 
   class List.EmptyView extends Marionette.ItemView
     template: 'jobs/list/templates/empty'

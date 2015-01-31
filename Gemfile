@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'active_model_serializers', '0.9.1'
+gem 'active_model_serializers', '0.9.3'
 gem 'coffee-rails', '4.1.0'
 gem 'haml-rails', '0.6.0'
 gem 'haml_coffee_assets', git: 'https://github.com/netzpirat/haml_coffee_assets'
@@ -12,6 +12,7 @@ gem 'uglifier', '2.6.1'
 gem 'unicorn', '4.8.3'
 gem 'nokogiri', '1.6.6.2'
 gem 'sucker_punch', '1.3.2'
+gem 'will_paginate', '3.0.7'
 
 group :production do
   gem 'rails_12factor', '0.0.3'

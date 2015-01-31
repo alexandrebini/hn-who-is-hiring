@@ -6,7 +6,7 @@
       delete resp.published_at
       resp
 
-  class Entities.Jobs extends Backbone.Collection
+  class Entities.Jobs extends Backbone.PageableCollection
     model: Entities.Job
     url: '/api/jobs.json'
 
