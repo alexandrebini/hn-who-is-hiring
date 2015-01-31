@@ -3,8 +3,12 @@
   class List.Layout extends Marionette.LayoutView
     template: 'jobs/list/templates/layout'
     regions:
+      searchRegion: '.search-region'
       jobsRegion: '.jobs-region'
       paginationRegion: '.pagination-region'
+
+  class List.SearchView extends Marionette.ItemView
+    template: 'jobs/list/templates/search'
 
   class List.JobView extends Marionette.ItemView
     template: 'jobs/list/templates/job'

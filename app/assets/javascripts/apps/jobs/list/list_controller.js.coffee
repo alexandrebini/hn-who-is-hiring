@@ -6,15 +6,21 @@
       @layout = @getLayoutView()
 
       @listenTo @layout, 'show', =>
+        @searchRegion()
+
         App.execute 'when:fetched', @jobs, =>
           @jobsRegion()
           # @paginationRegion() TODO
 
       App.jobsRegion.show @layout
 
+    searchRegion: ->
+      searchView = @getSearchView()
+      @layout.searchRegion.show searchView
+
     jobsRegion: ->
-      paginationView = @getJobsView()
-      @layout.jobsRegion.show paginationView
+      jobsView = @getJobsView()
+      @layout.jobsRegion.show jobsView
 
     paginationRegion: ->
       paginationView = @getPaginationView()
@@ -22,6 +28,9 @@
 
     getLayoutView: ->
       new List.Layout()
+
+    getSearchView: ->
+      new List.SearchView()
 
     getJobsView: ->
       new List.JobsView(collection: @jobs)

@@ -1,0 +1,8 @@
+%form
+  .row
+    .large-12.columns
+      .row.collapse
+        .large-10.columns
+          %input{ type: 'text', placeholder: 'Find a job' }
+        .large-2.columns
+          %a.alert.button.postfix{ href: '#' } Search
