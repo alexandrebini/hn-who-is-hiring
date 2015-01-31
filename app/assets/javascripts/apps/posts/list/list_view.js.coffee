@@ -8,6 +8,9 @@
   class List.PostView extends Marionette.ItemView
     tagName: 'li'
     template: 'posts/list/templates/post'
+    templateHelpers:
+      label: ->
+        moment(@published_at).format('MM/YYYY')
 
   class List.EmptyView extends Marionette.ItemView
     tagName: 'li'
@@ -17,3 +20,4 @@
     childView: List.PostView
     emptyView: List.EmptyView
     tagName: 'ul'
+    className: 'side-nav'

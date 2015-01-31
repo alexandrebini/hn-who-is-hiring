@@ -28,7 +28,7 @@ module Scraper
       end
 
       def document
-        @document ||= Nokogiri::HTML open(URL)
+        @document ||= Nokogiri::HTML open(URL), nil, 'utf-8'
       end
     end
   end

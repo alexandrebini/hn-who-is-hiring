@@ -1,0 +1,13 @@
+.row
+  .large-10.columns
+    %h5.subheader
+      %span Published at #{ @publishedAtFormatted() } by
+      %a{ href: @user, target: '_blank' }= @user
+
+  .large-2.columns
+    %a.button.small.success{ href: @url } View
+
+.row
+  .large-12.columns
+    :escaped
+      #{ @description }

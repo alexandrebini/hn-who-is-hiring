@@ -15,7 +15,7 @@ module Scraper
       #   <td><img src="s.gif" height="1" width="40"></td>
       #   <p></p>
       def all(post)
-        document = Nokogiri::HTML open(post.url)
+        document = Nokogiri::HTML open(post.url), nil, 'utf-8'
         document.css('td > img[width="0"][height="1"]').map do |img|
           comment = img.parent.parent
 

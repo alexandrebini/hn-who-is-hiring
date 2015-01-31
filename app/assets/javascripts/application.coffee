@@ -13,10 +13,13 @@
 //= require backbone.babysitter
 //= require backbone.wreqr
 //= require backbone.marionette
+
+# Other
 //= require hamlcoffee
+//= require moment.min
 
+# App
 //= require_tree ./config
-
 //= require app
 //= require_tree ./base
 //= require_tree ./entities

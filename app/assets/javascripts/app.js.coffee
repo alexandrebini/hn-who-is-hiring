@@ -7,6 +7,7 @@
 
   App.addInitializer ->
     App.module('PostsApp').start()
+    App.module('JobsApp').start()
 
   App.on 'start', ->
     @startHistory()
