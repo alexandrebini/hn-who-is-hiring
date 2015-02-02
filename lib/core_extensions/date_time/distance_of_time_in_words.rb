@@ -6,6 +6,9 @@ module CoreExtensions
 
         digit = string.match(date_pattern)[1].to_i
         frame = case string.match(date_pattern)[2]
+        when 'second', 'seconds' then :seconds
+        when 'minute', 'minutes' then :minutes
+        when 'hour', 'hours' then :hours
         when 'day', 'days' then :days
         when 'month', 'months' then :months
         when 'year', 'years' then :years
